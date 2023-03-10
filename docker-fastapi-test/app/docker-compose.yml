@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+  share:
+    #external: true
+
+services:
+  myAppServer:
+    image: "img3:latest"
+    stdin_open: true
+    tty: true
+    volumes:
+      - share:/code
+    working_dir: /code
+    ports:
+      - 8080:8088
